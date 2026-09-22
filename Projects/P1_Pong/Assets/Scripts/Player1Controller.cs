@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class Player1Controller : MonoBehaviour
 {
     private Vector2 _direction;
 
@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
             _direction = Vector2.up;
         else if (Keyboard.current.sKey.isPressed)
             _direction = Vector2.down;
-
         paddle.direction = _direction;
     }
 }

@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
     public GameStates gameState;
     private int paddleHits = 0;
     public int hitsPerSpawn = 4;
+    public Player1Controller player1Controller;
+    public Player2Controller player2Controller;
+    public GameObject gameOverScreen;
+    private int activeBalls = 1;
+    private bool gameOver = false;
 
     private void Start()
     {
@@ -20,18 +25,9 @@ public class GameManager : MonoBehaviour
         ball.AddStartingForce();
     }
 
-    public void CourtTriggered(int courtId)
-    {
-        score.IncreaseScore((courtId == 0 ? 1 : 0)); //If left court was triggered, right player scores & vice versa
-        StartRound();
-    }
-
     public void RegisterPaddleHit()
     {
         paddleHits++;
-
-        Debug.Log("Paddle hits: " + paddleHits);
-
         if (paddleHits % hitsPerSpawn == 0)
         {
             SpawnNewBall();
@@ -40,9 +36,35 @@ public class GameManager : MonoBehaviour
 
     private void SpawnNewBall()
     {
+        //instantiate = duplicates object, quaternion.identity = zero rotation
         Ball newBall = Instantiate(ball, Vector3.zero, Quaternion.identity);
 
         newBall.ResetBall();
         newBall.AddStartingForce();
+        BallSpawned();
+    }
+    
+    public void BallSpawned()
+    {
+        activeBalls++;
+    }
+
+    public void BallExited(Ball ball)
+    {
+        activeBalls--;
+        Destroy(ball.gameObject);
+
+        if (activeBalls <= 0)
+        {
+            GameOver();
+        }
+    }
+
+    private void GameOver()
+    {
+        gameOver = true;
+        player1Controller.enabled = false;
+        player2Controller.enabled = false;
+        gameOverScreen.SetActive(true);
     }
 }

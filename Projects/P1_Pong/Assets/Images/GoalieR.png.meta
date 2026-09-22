@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1af57133d7ac32747841bc2e64750f07
+guid: af4ac1b859ca0a647a704088dee800bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6479558217058493216
-    second: Galaxy_0
+      213: 1055384500506277363
+    second: GoalieR_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Galaxy_0
+      name: GoalieR_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 800
-        height: 585
+        x: 1
+        y: 14
+        width: 191
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ecd3cab12cf316a0800000000000000
-      internalID: -6479558217058493216
+      spriteID: 3f5312e8c9a75ae00800000000000000
+      internalID: 1055384500506277363
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Galaxy_0: -6479558217058493216
+      GoalieR_0: 1055384500506277363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

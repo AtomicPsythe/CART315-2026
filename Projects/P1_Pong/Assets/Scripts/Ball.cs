@@ -6,8 +6,8 @@ public class Ball : MonoBehaviour
 {
     private Rigidbody2D _rigidBody;
 
-    public float speed = 100.0f;
-    public float speedIncrease = 5.0f;
+    public float speed = 140.0f;
+    public float speedIncrease = 20.0f;
 
     private void Awake()
     {
@@ -23,8 +23,8 @@ public class Ball : MonoBehaviour
 
     public void AddStartingForce()
     {
-        float x = Random.value < 0.5f ? -1.0f : 1.0f;
-        float y = (Random.value < 0.5f ? -1.0f : 1.0f) * Random.Range(0.5f, 0.9f);
+        float x = Random.value < 0.8f ? -1.0f : 1.0f;
+        float y = (Random.value < 0.8f ? -1.0f : 1.0f) * Random.Range(0.8f, 0.9f);
 
         Vector2 direction = new Vector2(x, y);
 
