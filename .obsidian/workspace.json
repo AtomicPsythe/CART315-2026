@@ -83,8 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c3fe881db4d75b77",
@@ -188,17 +187,17 @@
   },
   "active": "58c3c9c965450639",
   "lastOpenFiles": [
-    "Projects/P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
-    "Projects/P1_Pong/Temp/obj/Assembly-CSharp",
-    "Projects/P1_Pong/Temp/bin/Debug",
-    "Projects/P1_Pong/Temp/bin",
-    "Projects/P1_Pong/Temp/obj",
-    "Projects/P1_Pong/Temp",
-    "Projects/P1_Pong/Temp/UnityTempFile-1ab2d170fe9015a459c24c54b8f70b3e",
-    "Projects/P1_Pong/Temp/ADB-Refresh991f4585e9e83414cb7816dc4a62cdc1",
-    "Projects/P1_Pong/Temp/UnityTempFile-2d4ebfe75f9fb014aa75b03194df5490",
-    "Projects/P1_Pong/Library/Bee/TundraBuildState.state",
-    "Projects/P1_Pong/Temp/ADB-Refresh0ab2e2aab0f4de94595d51284301fc9c",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
+    "Projects/Foti.A_P1_Pong/Temp/bin/Debug",
+    "Projects/Foti.A_P1_Pong/Temp/bin",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.assets.cache",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.nuget.dgspec.json",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/project.nuget.cache",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/project.assets.json",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.nuget.g.props",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.nuget.g.targets",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/968791ed-8079-4a29-8afc-1656fd7b27d6.tmp",
     "Projects/P1_Pong/Assets/Images/Ice Rink.png",
     "Projects/P1_Pong/Assets/Images/GoalieL.png",
     "Projects/P1_Pong/Assets/Images/GoalieR.png",

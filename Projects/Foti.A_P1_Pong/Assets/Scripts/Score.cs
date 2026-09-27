@@ -3,37 +3,27 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    public int scorePlayerOne;
-    public int scorePlayerTwo;
+    public int activePuckCount = 1;
 
-    public TextMeshProUGUI scorePlayerOneText;
-    public TextMeshProUGUI scorePlayerTwoText;
-    
-    public void IncreaseScore(int playerId)
+    public TextMeshProUGUI activePuckText;
+
+    public void UpdatePuckCount(int puckCount)
     {
-        switch (playerId)
+        activePuckCount = puckCount;
+
+        if (activePuckText != null)
         {
-            case 0:
-                scorePlayerOne++;
-                break;
-            case 1:
-                scorePlayerTwo++;
-                break;
+            activePuckText.text = activePuckCount.ToString();
         }
-        
-        UpdateScore();
     }
 
     public void ResetScore()
     {
-        scorePlayerOne = 0;
-        scorePlayerTwo = 0;
-    }
+        activePuckCount = 1;
 
-    // Update is called once per frame
-    void UpdateScore()
-    {
-        scorePlayerOneText.text = scorePlayerOne.ToString();
-        scorePlayerTwoText.text = scorePlayerTwo.ToString();
+        if (activePuckText != null)
+        {
+            activePuckText.text = activePuckCount.ToString();
+        }
     }
 }

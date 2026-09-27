@@ -35,11 +35,27 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Paddle>() != null)
         {
+            Debug.Log("PADDLE HIT | Speed variable: " + speed +
+              " | Actual velocity: " + _rigidBody.linearVelocity.magnitude);
+
             speed += speedIncrease;
             AddStartingForce();
 
             GameManager gameManager = FindFirstObjectByType<GameManager>();
             gameManager.RegisterPaddleHit();
         }
+    }
+
+    // ChangeSpeed is for the RinkHoles script
+    public void ChangeSpeed(float amount)
+    {
+        Vector3 currentDirection = _rigidBody.linearVelocity.normalized;
+
+        if (speed < 2.0f)
+        {
+            speed = 2.0f;
+        }
+        //_rigidBody.linearVelocity = _rigidBody.linearVelocity.normalized * speed;
+        _rigidBody.AddForce(currentDirection * 2);
     }
 }

@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,18 +13,42 @@ public class GameManager : MonoBehaviour
     public Player1Controller player1Controller;
     public Player2Controller player2Controller;
     public GameObject gameOverScreen;
+    public TextMeshProUGUI countdownText;
     private int activeBalls = 1;
     private bool gameOver = false;
 
     private void Start()
     {
+        StartCoroutine(StartCountdown());
+    }
+
+    private IEnumerator StartCountdown()
+    {
+        countdownText.gameObject.SetActive(true);
+
+        countdownText.text = "3";
+        yield return new WaitForSeconds(1f);
+
+        countdownText.text = "2";
+        yield return new WaitForSeconds(1f);
+
+        countdownText.text = "1";
+        yield return new WaitForSeconds(1f);
+
+        countdownText.text = "GO!";
+        yield return new WaitForSeconds(0.5f);
+
+        countdownText.gameObject.SetActive(false);
+
         StartRound();
     }
 
     public void StartRound()
     {
+        activeBalls = 1;
         ball.ResetBall();
         ball.AddStartingForce();
+        score.UpdatePuckCount(activeBalls);
     }
 
     public void RegisterPaddleHit()
@@ -47,11 +73,13 @@ public class GameManager : MonoBehaviour
     public void BallSpawned()
     {
         activeBalls++;
+        score.UpdatePuckCount(activeBalls);
     }
 
     public void BallExited(Ball ball)
     {
         activeBalls--;
+        score.UpdatePuckCount(activeBalls);
         Destroy(ball.gameObject);
 
         if (activeBalls <= 0)
