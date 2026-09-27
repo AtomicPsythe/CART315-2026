@@ -35,9 +35,6 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Paddle>() != null)
         {
-            Debug.Log("PADDLE HIT | Speed variable: " + speed +
-              " | Actual velocity: " + _rigidBody.linearVelocity.magnitude);
-
             speed += speedIncrease;
             AddStartingForce();
 

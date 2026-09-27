@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Player2Controller player2Controller;
     public GameObject gameOverScreen;
     public TextMeshProUGUI countdownText;
+    public TextMeshProUGUI gameOverHighScoreText; 
     private int activeBalls = 1;
     private bool gameOver = false;
 
@@ -93,6 +94,12 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         player1Controller.enabled = false;
         player2Controller.enabled = false;
+
+        if (gameOverHighScoreText != null && score != null)
+        {
+            gameOverHighScoreText.text = "Highest Puck Count: " + score.highestPuckCount.ToString();
+        }
+        
         gameOverScreen.SetActive(true);
     }
 }
