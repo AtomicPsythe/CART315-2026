@@ -5,7 +5,6 @@ public class Score : MonoBehaviour
 {
     public int activePuckCount = 1;
     public int highestPuckCount = 1;
-
     public TextMeshProUGUI activePuckText;
     public TextMeshProUGUI highestPuckText;
 

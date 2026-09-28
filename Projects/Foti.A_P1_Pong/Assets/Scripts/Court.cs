@@ -6,7 +6,6 @@ public class Court : MonoBehaviour
 {
     public GameManager gameManager;
     public int courtId = 0;
-
     public EventTrigger.TriggerEvent courtTrigger;
 
     private void OnTriggerEnter2D(Collider2D collision)

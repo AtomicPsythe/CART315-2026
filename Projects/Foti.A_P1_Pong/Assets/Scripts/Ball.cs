@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 public class Ball : MonoBehaviour
 {
     private Rigidbody2D _rigidBody;
-
     public float speed = 140.0f;
     public float speedIncrease = 20.0f;
 
@@ -43,7 +42,7 @@ public class Ball : MonoBehaviour
         }
     }
 
-    // ChangeSpeed is for the RinkHoles script
+    // ChangeSize is for the RinkHoles script
     public void ChangeSize(float amount)
     {
         float newSize = transform.localScale.x + amount;
@@ -52,7 +51,6 @@ public class Ball : MonoBehaviour
         {
             newSize = 0.5f;
         }
-
         transform.localScale = new Vector3(newSize, newSize, newSize);
     }
 }

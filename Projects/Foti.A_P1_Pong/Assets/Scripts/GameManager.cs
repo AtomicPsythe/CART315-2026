@@ -99,7 +99,6 @@ public class GameManager : MonoBehaviour
         {
             gameOverHighScoreText.text = "Highest Puck Count: " + score.highestPuckCount.ToString();
         }
-        
         gameOverScreen.SetActive(true);
     }
 }
