@@ -44,15 +44,15 @@ public class Ball : MonoBehaviour
     }
 
     // ChangeSpeed is for the RinkHoles script
-    public void ChangeSpeed(float amount)
+    public void ChangeSize(float amount)
     {
-        Vector3 currentDirection = _rigidBody.linearVelocity.normalized;
+        float newSize = transform.localScale.x + amount;
 
-        if (speed < 2.0f)
+        if (newSize < 0.5f)
         {
-            speed = 2.0f;
+            newSize = 0.5f;
         }
-        //_rigidBody.linearVelocity = _rigidBody.linearVelocity.normalized * speed;
-        _rigidBody.AddForce(currentDirection * 2);
+
+        transform.localScale = new Vector3(newSize, newSize, newSize);
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RinkHole : MonoBehaviour
 {
-    public float speedChange;
+    public float sizeChange;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -10,7 +10,7 @@ public class RinkHole : MonoBehaviour
 
         if (ball != null)
         {
-            ball.ChangeSpeed(speedChange);
+            ball.ChangeSize(sizeChange);
         }
     }
 }
