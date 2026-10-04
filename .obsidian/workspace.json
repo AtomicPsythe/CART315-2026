@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Reflections/Reflective Reading 1 The Stuff Games Are Made Of (P. Barr) Chapter 2.md",
+                "file": "Reflections/Reflective Reading 2 Schön and Bennett Reflective Conversation With Materials.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Reflective Reading 1 The Stuff Games Are Made Of (P. Barr) Chapter 2"
+              "title": "Reflective Reading 2 Schön and Bennett Reflective Conversation With Materials"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "Journal 1 Pong Project"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,8 +97,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c3fe881db4d75b77",
@@ -201,22 +199,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "583c3afbed854d97",
+  "active": "58c3c9c965450639",
   "lastOpenFiles": [
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotkw9ds2nq.g6h",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotlm1fs2u1.l7x",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aot60997ta4.3jb",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotq4x4ajfj.bks",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aot50o2rh87.ozk",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotvnu9hfai.yqn",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotwdfwndzw.3wm",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotjgd8j07x.njs",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotx771o3zt.mzj",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotdrghs19m.zyv",
-    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aoto5hac0gk.asr",
-    "Reflections/Reflective Reading 2 Schön and Bennett Reflective Conversation With Materials.md",
     "Reflections/Reflective Reading 1 The Stuff Games Are Made Of (P. Barr) Chapter 2.md",
     "Journal/Journal 1 Pong Project.md",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.GeneratedMSBuildEditorConfig.editorconfig",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp/Assembly-CSharp.csproj.AssemblyReference.cache",
+    "Projects/Foti.A_P1_Pong/Temp/obj/Assembly-CSharp",
+    "Projects/Foti.A_P1_Pong/Temp/bin/Debug",
+    "Projects/Foti.A_P1_Pong/Temp/obj",
+    "Projects/Foti.A_P1_Pong/Temp/bin",
+    "Projects/Foti.A_P1_Pong/Temp",
+    "Projects/Foti.A_P1_Pong/Temp/ADB-Refresh4eb2d2e1e3f9d014c9bae371b38138f1",
+    "Projects/Foti.A_P1_Pong/Temp/UnityTempFile-e7e6e5f9cb3be0d488429a53cb65024c",
+    "Projects/Foti.A_P1_Pong/Temp/Burst/burst-aotkw9ds2nq.g6h",
+    "Reflections/Reflective Reading 2 Schön and Bennett Reflective Conversation With Materials.md",
     "Projects/P1_Pong/Assets/Images/Ice Rink.png",
     "Projects/P1_Pong/Assets/Images/GoalieL.png",
     "Projects/P1_Pong/Assets/Images/GoalieR.png",
