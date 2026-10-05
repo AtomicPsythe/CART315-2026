@@ -49,13 +49,17 @@ public class GameManager : MonoBehaviour
         playButton.SetActive(false);
         gameOver.SetActive(false);
 
+        // Reset the player to its starting position
+        player.ResetPlayer();
+
         Time.timeScale = 1f;
         player.enabled = true;
 
-        Pipes[] pipes = FindObjectsByType<Pipes>(FindObjectsSortMode.None);
+        Flower[] flowers = FindObjectsByType<Flower>(FindObjectsSortMode.None);
 
-        for (int i = 0; i < pipes.Length; i++) {
-            Destroy(pipes[i].gameObject);
+        for (int i = 0; i < flowers.Length; i++)
+        {
+            Destroy(flowers[i].gameObject);
         }
     }
 
