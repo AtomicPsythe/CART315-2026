@@ -5,11 +5,16 @@ public class Sunflower : MonoBehaviour
     public Sprite openSprite;
     public Sprite closedSprite;
 
-    public float openTime = 3f;
-    public float closedTime = 2f;
+    public float minOpenTime = 2f;
+    public float maxOpenTime = 5f;
+
+    public float minClosedTime = 1f;
+    public float maxClosedTime = 3f;
 
     private SpriteRenderer spriteRenderer;
     private Collider2D flowerCollider;
+
+    private bool isClosed = false;
 
     private void Awake()
     {
@@ -24,17 +29,28 @@ public class Sunflower : MonoBehaviour
 
     private void OpenFlower()
     {
+        isClosed = false;
+
         spriteRenderer.sprite = openSprite;
         flowerCollider.enabled = true;
 
-        Invoke(nameof(CloseFlower), openTime);
+        float randomOpenTime = Random.Range(minOpenTime, maxOpenTime);
+        Invoke(nameof(CloseFlower), randomOpenTime);
     }
 
     private void CloseFlower()
     {
-        spriteRenderer.sprite = closedSprite;
-        flowerCollider.enabled = false;
+        isClosed = true;
 
-        Invoke(nameof(OpenFlower), closedTime);
+        spriteRenderer.sprite = closedSprite;
+        flowerCollider.enabled = true;
+
+        float randomClosedTime = Random.Range(minClosedTime, maxClosedTime);
+        Invoke(nameof(OpenFlower), randomClosedTime);
+    }
+
+    public bool IsClosed()
+    {
+        return isClosed;
     }
 }

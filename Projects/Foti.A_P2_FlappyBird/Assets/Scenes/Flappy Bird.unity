@@ -982,7 +982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1474871342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 1949728353}
   - component: {fileID: 1949728352}
   - component: {fileID: 1949728351}
-  - component: {fileID: 1949728349}
+  - component: {fileID: 1949728354}
   m_Layer: 0
   m_Name: Background
   m_TagString: Obstacle
@@ -1146,19 +1146,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1949728349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949728348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7177b51c79cf0c46b2ae85524907385, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationSpeed: 0.05
 --- !u!23 &1949728351
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1231,6 +1218,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1949728354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949728348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7177b51c79cf0c46b2ae85524907385, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Parallax
+  animationSpeed: 0.05
 --- !u!1 &2105631070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ PrefabInstance:
     - target: {fileID: 1011625064341694141, guid: 6a4a9923e56f38c41ab22724cfe470f1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.12
+      value: -14.56
       objectReference: {fileID: 0}
     - target: {fileID: 1011625064341694141, guid: 6a4a9923e56f38c41ab22724cfe470f1,
         type: 3}

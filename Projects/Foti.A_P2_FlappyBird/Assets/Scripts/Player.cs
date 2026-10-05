@@ -7,11 +7,11 @@ public class Player : MonoBehaviour
     public Sprite[] sprites;
     private int spriteIndex;
 
+    // Player movement
     public float moveSpeed = 5f;
     public float flutterForce = 7f;
 
     private Vector3 startingPosition;
-
     private Rigidbody2D rb;
 
     private void Awake()
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
         // Repeats the sprite animation
         InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
 
+        // resets the starting position on game over
         startingPosition = transform.position;
     }
 
@@ -74,7 +75,19 @@ public class Player : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {   
+    {
+        if (collision.gameObject.CompareTag("Flower"))
+        {
+            Sunflower sunflower = collision.gameObject.GetComponent<Sunflower>();
+
+            if (sunflower != null && sunflower.IsClosed())
+            {
+                GameManager.Instance.GameOver();
+            }
+
+            return;
+        }
+
         GameManager.Instance.GameOver();
     }
 

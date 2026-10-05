@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6570752834316118501}
   m_Layer: 0
   m_Name: Sunflower
-  m_TagString: Untagged
+  m_TagString: Flower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,8 +157,10 @@ MonoBehaviour:
     type: 3}
   closedSprite: {fileID: 2147560227797304921, guid: 71eba2a6fd8813249b9c85f862892a0d,
     type: 3}
-  openTime: 6
-  closedTime: 2
+  minOpenTime: 2
+  maxOpenTime: 5
+  minClosedTime: 1
+  maxClosedTime: 3
 --- !u!114 &6570752834316118501
 MonoBehaviour:
   m_ObjectHideFlags: 0
