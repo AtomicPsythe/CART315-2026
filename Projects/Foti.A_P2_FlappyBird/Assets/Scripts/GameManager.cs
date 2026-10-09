@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text scoreText;
     [SerializeField] private GameObject playButton;
     [SerializeField] private GameObject gameOver;
+    [SerializeField] private Parallax parallax;
+    [SerializeField] private GameObject levelComplete;
 
     public int score { get; private set; } = 0;
 
@@ -75,6 +77,13 @@ public class GameManager : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+    }
+    public void LevelComplete()
+    {
+        parallax.StopScrolling();
+
+        levelComplete.SetActive(true);
+        Pause();
     }
 
 }
