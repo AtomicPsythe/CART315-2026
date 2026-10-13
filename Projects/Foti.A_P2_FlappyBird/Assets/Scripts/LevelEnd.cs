@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class LevelEnd : MonoBehaviour
@@ -7,7 +6,6 @@ public class LevelEnd : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Level Complete!");
             GameManager.Instance.LevelComplete();
         }
     }

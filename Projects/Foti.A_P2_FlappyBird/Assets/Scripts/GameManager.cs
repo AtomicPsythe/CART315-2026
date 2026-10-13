@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
@@ -10,15 +12,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Spawner spawner;
     [SerializeField] private Text scoreText;
     [SerializeField] private GameObject playButton;
-    [SerializeField] private GameObject gameOver;
+    [SerializeField] private GameObject nextLevelButton;
+
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI gameOver;
+    [SerializeField] private TextMeshProUGUI levelComplete;
+
     [SerializeField] private Parallax parallax;
-    [SerializeField] private GameObject levelComplete;
+
 
     public int score { get; private set; } = 0;
 
     private void Awake()
     {
-        if (Instance != null) {
+        if (Instance != null) 
+        {
             DestroyImmediate(gameObject);
         } else {
             Instance = this;
@@ -27,13 +35,19 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (Instance == this) {
+        if (Instance == this) 
+        {
             Instance = null;
         }
     }
 
     private void Start()
     {
+        if (titleText != null) titleText.gameObject.SetActive(true);
+        if (gameOver != null) gameOver.gameObject.SetActive(false);
+        if (levelComplete != null) levelComplete.gameObject.SetActive(false);
+        if (nextLevelButton != null) nextLevelButton.SetActive(false);
+        playButton.SetActive(true);
         Pause();
     }
 
@@ -49,9 +63,21 @@ public class GameManager : MonoBehaviour
         scoreText.text = score.ToString();
 
         playButton.SetActive(false);
-        gameOver.SetActive(false);
+        if (nextLevelButton != null) nextLevelButton.SetActive(false);
+        if (gameOver != null) gameOver.gameObject.SetActive(false);
+        if (levelComplete != null) levelComplete.gameObject.SetActive(false);
+        if (titleText != null) titleText.gameObject.SetActive(false);
 
-        // Reset the player to its starting position
+        if (parallax != null)
+        {
+            parallax.ResetParallax();
+        }
+
+        if (spawner != null)
+        {
+            spawner.ResetSpawner();
+        }
+
         player.ResetPlayer();
 
         Time.timeScale = 1f;
@@ -68,7 +94,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         playButton.SetActive(true);
-        gameOver.SetActive(true);
+        if (gameOver != null) gameOver.gameObject.SetActive(true);
 
         Pause();
     }
@@ -80,10 +106,30 @@ public class GameManager : MonoBehaviour
     }
     public void LevelComplete()
     {
-        parallax.StopScrolling();
+        if (parallax != null) 
+        {
+            parallax.StopScrolling();
+        }
 
-        levelComplete.SetActive(true);
+        if (levelComplete != null) 
+        {
+            levelComplete.gameObject.SetActive(true);
+        }
+
+        if (nextLevelButton != null) nextLevelButton.SetActive(true); 
+
         Pause();
     }
 
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1f;
+
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+    }
 }
