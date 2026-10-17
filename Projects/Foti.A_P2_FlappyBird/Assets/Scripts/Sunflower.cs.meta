@@ -4,9 +4,9 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - openSprite: {fileID: -256329436847572505, guid: c916d919e9870f5449fa2482b9076660,
+  - openSprite: {fileID: 3128230358442741977, guid: 40f91cc464146a5429f80c2bb30476f6,
       type: 3}
-  - closedSprite: {fileID: 2147560227797304921, guid: 71eba2a6fd8813249b9c85f862892a0d,
+  - closedSprite: {fileID: -1947766782886573064, guid: d3768ab16dcbf9441b8c0bf3f092b44c,
       type: 3}
   executionOrder: 0
   icon: {instanceID: 0}

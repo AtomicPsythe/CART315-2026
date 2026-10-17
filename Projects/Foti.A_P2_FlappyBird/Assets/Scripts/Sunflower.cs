@@ -1,15 +1,24 @@
+using System.Collections;
 using UnityEngine;
 
-public class Sunflower : MonoBehaviour
+// borrows from the Flower.cs script
+public class Sunflower : Flower
 {
     public Sprite openSprite;
     public Sprite closedSprite;
+    // variable for the custom polygoncollider2d
+    private PolygonCollider2D polyCollider;
 
     public float minOpenTime = 2f;
     public float maxOpenTime = 5f;
 
     public float minClosedTime = 1f;
     public float maxClosedTime = 3f;
+
+    // flashing color to warn the player before the flower closes
+    public float warningDuration = 0.6f;
+    public float pulseSpeed = 7f;
+    public Color warningColor = new Color(0.8f, 0.35f, 0.0f, 1.0f); 
 
     private SpriteRenderer spriteRenderer;
     private Collider2D flowerCollider;
@@ -20,10 +29,12 @@ public class Sunflower : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         flowerCollider = GetComponent<Collider2D>();
+        polyCollider = GetComponent<PolygonCollider2D>();
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         OpenFlower();
     }
 
@@ -32,10 +43,38 @@ public class Sunflower : MonoBehaviour
         isClosed = false;
 
         spriteRenderer.sprite = openSprite;
+
+        // resets flower color to original image
+        spriteRenderer.color = Color.white;
+
+        polyCollider.pathCount = 0;
         flowerCollider.enabled = true;
 
         float randomOpenTime = Random.Range(minOpenTime, maxOpenTime);
-        Invoke(nameof(CloseFlower), randomOpenTime);
+        //Invoke(nameof(CloseFlower), randomOpenTime);
+        Invoke(nameof(StartWarningSequence), randomOpenTime);
+    }
+
+    private void StartWarningSequence()
+    {
+        StartCoroutine(FlashWarningRoutine());
+    }
+
+    private IEnumerator FlashWarningRoutine()
+    {
+        float elapsed = 0f;
+
+        while (elapsed < warningDuration)
+        {
+            // pulses the flashing colors at a steady pace
+            float t = Mathf.PingPong(elapsed * pulseSpeed, 1f);
+            spriteRenderer.color = Color.Lerp(Color.white, warningColor, t);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        CloseFlower();
     }
 
     private void CloseFlower()
@@ -43,13 +82,15 @@ public class Sunflower : MonoBehaviour
         isClosed = true;
 
         spriteRenderer.sprite = closedSprite;
+        spriteRenderer.color = Color.white;
+        polyCollider.pathCount = 0;
         flowerCollider.enabled = true;
 
         float randomClosedTime = Random.Range(minClosedTime, maxClosedTime);
         Invoke(nameof(OpenFlower), randomClosedTime);
     }
 
-    public bool IsClosed()
+    public override bool IsClosed()
     {
         return isClosed;
     }

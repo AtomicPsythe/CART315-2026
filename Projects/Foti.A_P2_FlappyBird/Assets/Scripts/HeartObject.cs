@@ -16,7 +16,7 @@ public class HeartObject : MonoBehaviour
 
     private void Update()
     {
-        // code that dictates it floating
+        // code that makes the heart collectible float
         float newY = Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
         transform.localPosition = new Vector3(startRelativePosition.x, startRelativePosition.y + newY, startRelativePosition.z);
     }

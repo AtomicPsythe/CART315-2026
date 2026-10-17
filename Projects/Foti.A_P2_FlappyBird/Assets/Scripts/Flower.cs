@@ -6,7 +6,7 @@ public class Flower : MonoBehaviour
 
     private float leftEdge;
 
-    private void Start()
+    protected virtual void Start()
     {
         leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - 1f;
     }
@@ -17,7 +17,21 @@ public class Flower : MonoBehaviour
 
         if (transform.position.x < leftEdge)
         {
+            StopAllCoroutines();
+            CancelInvoke();
+            gameObject.SetActive(false);
             Destroy(gameObject);
         }
+    }
+
+    protected virtual void OnDisable()
+    {
+        StopAllCoroutines();
+        CancelInvoke();
+    }
+
+    public virtual bool IsClosed()
+    {
+        return false;
     }
 }

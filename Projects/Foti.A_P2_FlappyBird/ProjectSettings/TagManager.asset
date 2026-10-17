@@ -8,6 +8,7 @@ TagManager:
   - Scoring
   - Flower
   - EndPlatform
+  - Flowers
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Overlay
+    uniqueID: 1224656683
     locked: 0
   m_RenderingLayers:
   - Default

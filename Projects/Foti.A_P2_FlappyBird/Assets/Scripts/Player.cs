@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    // Sprite Stuff
+    // Sprite stuff
     private SpriteRenderer spriteRenderer;
     public Sprite[] sprites;
     private int spriteIndex;
@@ -11,36 +13,38 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     public float flutterForce = 7f;
 
+    // Player stamina
+    public Image StaminaBar;
+    public float MaxStamina = 100f;
+    public float Stamina;
+    public float flutterCost = 15f;
+    public float chargeRate = 35f;
+
     private Vector3 startingPosition;
     private Rigidbody2D rb;
+    private Coroutine rechargeCoroutine;
 
     private void Awake()
     {
-        // For animating the sprites
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-
-        // Remember where the butterfly starts
         startingPosition = transform.position;
     }
 
     private void Start()
     {
-        // Repeats the sprite animation
         InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
-
-        // resets the starting position on game over
         startingPosition = transform.position;
+        
+        // stamina values at game start
+        Stamina = MaxStamina;
+        UpdateStaminaUI();
     }
 
     private void AnimateSprite()
     {
         spriteIndex++;
-
-        if (spriteIndex >= sprites.Length)
-        {
-            spriteIndex = 0;
-        }
+        if (spriteIndex >= sprites.Length) spriteIndex = 0;
 
         if (spriteIndex < sprites.Length && spriteIndex >= 0)
         {
@@ -50,21 +54,47 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        // Horizontal Movement
+        // horizontal movement
         float horizontalInput = Input.GetAxisRaw("Horizontal");
+        rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
-        rb.linearVelocity = new Vector2(
-            horizontalInput * moveSpeed,
-            rb.linearVelocity.y
-        );
-
-        // Vertical Movement
-        if (Input.GetKeyDown(KeyCode.Space))
+        // vertical movement (only if player has enough stamina)
+        if (Input.GetKeyDown(KeyCode.Space) && Stamina >= flutterCost)
         {
-            rb.linearVelocity = new Vector2(
-                rb.linearVelocity.x,
-                flutterForce
-            );
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, flutterForce);
+
+            // using stamina
+            Stamina -= flutterCost;
+            if (Stamina < 0) Stamina = 0;
+            UpdateStaminaUI();
+
+            if (rechargeCoroutine != null)
+            {
+                StopCoroutine(rechargeCoroutine);
+            }
+            rechargeCoroutine = StartCoroutine(RechargeStaminaRoutine());
+        }
+    }
+
+    private IEnumerator RechargeStaminaRoutine()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        while (Stamina < MaxStamina)
+        {
+            Stamina += chargeRate * Time.deltaTime;
+            if (Stamina > MaxStamina) Stamina = MaxStamina;
+            
+            UpdateStaminaUI();
+            yield return null;
+        }
+    }
+
+    private void UpdateStaminaUI()
+    {
+        if (StaminaBar != null)
+        {
+            StaminaBar.fillAmount = Stamina / MaxStamina;
         }
     }
 
@@ -72,6 +102,13 @@ public class Player : MonoBehaviour
     {
         transform.position = startingPosition;
         rb.linearVelocity = Vector2.zero;
+        
+        Stamina = MaxStamina;
+        UpdateStaminaUI();
+        if (rechargeCoroutine != null)
+        {
+            StopCoroutine(rechargeCoroutine);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -84,9 +121,9 @@ public class Player : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Flower"))
         {
-            Sunflower sunflower = collision.gameObject.GetComponent<Sunflower>();
+            Flower flower = collision.gameObject.GetComponent<Flower>();
 
-            if (sunflower != null && sunflower.IsClosed())
+            if (flower != null && flower.IsClosed())
             {
                 GameManager.Instance.GameOver();
             }
@@ -99,9 +136,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Scoring"))
+        Flower flower = other.GetComponent<Flower>(); 
+        if (flower != null)
         {
-            GameManager.Instance.IncreaseScore();
+            if (flower.IsClosed())
+            {
+                GameManager.Instance.GameOver();
+            }
         }
     }
 }

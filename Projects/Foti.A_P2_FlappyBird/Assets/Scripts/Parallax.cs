@@ -52,7 +52,6 @@ public class Parallax : MonoBehaviour
     {
         timer = 0f;
         isScrolling = true;
-        meshRenderer.material.mainTextureOffset = Vector2.zero;
 
         if (leafPlatform != null)
         {
