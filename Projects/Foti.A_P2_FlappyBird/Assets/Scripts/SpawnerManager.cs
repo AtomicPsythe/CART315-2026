@@ -3,6 +3,8 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager Instance;
+
+    // variables to make sure the flowers being spawned don't overlap
     public float globalSpawnCooldown = 1.0f;
     private float lastSpawnTime = -999f;
 

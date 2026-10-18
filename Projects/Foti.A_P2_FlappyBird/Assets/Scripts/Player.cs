@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
     public float flutterForce = 7f;
 
-    // Player stamina
+    // Player stamina (code done with the assistance of my friend Alissia Bocarro)
     public Image StaminaBar;
     public float MaxStamina = 100f;
     public float Stamina;
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
         startingPosition = transform.position;
         
-        // stamina values at game start
+        // stamina values at game start (code done with the assistance of my friend Alissia Bocarro)
         Stamina = MaxStamina;
         UpdateStaminaUI();
     }
@@ -58,12 +58,12 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb.linearVelocity.y);
 
-        // vertical movement (only if player has enough stamina)
+        // vertical movement (only if player has enough stamina, code done with the assistance of my friend Alissia Bocarro)
         if (Input.GetKeyDown(KeyCode.Space) && Stamina >= flutterCost)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, flutterForce);
 
-            // using stamina
+            // using stamina (code done with the assistance of my friend Alissia Bocarro)
             Stamina -= flutterCost;
             if (Stamina < 0) Stamina = 0;
             UpdateStaminaUI();
@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // (code done with the assistance of my friend Alissia Bocarro)
     private IEnumerator RechargeStaminaRoutine()
     {
         yield return new WaitForSeconds(1.0f);
@@ -90,6 +91,7 @@ public class Player : MonoBehaviour
         }
     }
 
+    // (code done with the assistance of my friend Alissia Bocarro)
     private void UpdateStaminaUI()
     {
         if (StaminaBar != null)

@@ -11,9 +11,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player player;
     [SerializeField] private GameObject spawner;
-    [SerializeField] private Text scoreText;
     [SerializeField] private GameObject playButton;
+    [SerializeField] private GameObject tryAgainButton;
     [SerializeField] private GameObject nextLevelButton;
+
+    // narrative scenes
+    [SerializeField] private GameObject prologueButton;
+    [SerializeField] private GameObject epilogueButton;
 
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI gameOver;
@@ -46,6 +50,9 @@ public class GameManager : MonoBehaviour
         if (gameOver != null) gameOver.gameObject.SetActive(false);
         if (levelComplete != null) levelComplete.gameObject.SetActive(false);
         if (nextLevelButton != null) nextLevelButton.SetActive(false);
+        if (tryAgainButton != null) tryAgainButton.SetActive(false);
+        if (prologueButton != null) prologueButton.SetActive(false);
+        if (epilogueButton != null) epilogueButton.SetActive(false);
 
         Pause();
         StartCoroutine(StartCountdown());
@@ -88,11 +95,11 @@ public class GameManager : MonoBehaviour
 
     public void Play()
     {
-        playButton.SetActive(false);
         if (nextLevelButton != null) nextLevelButton.SetActive(false);
         if (gameOver != null) gameOver.gameObject.SetActive(false);
         if (levelComplete != null) levelComplete.gameObject.SetActive(false);
         if (titleText != null) titleText.gameObject.SetActive(false);
+        if (tryAgainButton != null) tryAgainButton.SetActive(false); 
 
         if (parallax != null)
         {
@@ -104,13 +111,19 @@ public class GameManager : MonoBehaviour
             if (spawner.TryGetComponent(out Spawner baseSpawner)) {
                 baseSpawner.ResetSpawner();
             } 
-
             else if (spawner.TryGetComponent(out TulipSpawner tulipSpawner)) {
                 tulipSpawner.ResetSpawner();
             }
+            else if (spawner.TryGetComponent(out Level3Spawner level3Spawner)) {
+                level3Spawner.ResetSpawner();
+            }
         }
 
+        // resets the level completely (parallax, flowers, player, leaf platform)
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         player.ResetPlayer();
+
         Time.timeScale = 1f;
         player.enabled = true;
         Flower[] flowers = FindObjectsByType<Flower>(FindObjectsSortMode.None);
@@ -119,11 +132,16 @@ public class GameManager : MonoBehaviour
         {
             Destroy(flowers[i].gameObject);
         }
+
+        StopAllCoroutines();
+        Pause();
+        StartCoroutine(StartCountdown());
     }
 
     public void GameOver()
     {
         if (gameOver != null) gameOver.gameObject.SetActive(true);
+        if (tryAgainButton != null) tryAgainButton.SetActive(true); 
         Pause();
     }
 
@@ -137,7 +155,20 @@ public class GameManager : MonoBehaviour
         {
             levelComplete.gameObject.SetActive(true);
         }
-        if (nextLevelButton != null) nextLevelButton.SetActive(true); 
+
+        // checks if there is a next level after the last one (level 3)
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            // if there is a level that comes after, shows the next level button
+            if (nextLevelButton != null) nextLevelButton.SetActive(true);
+        }
+        else
+        {
+            // if the epilogue is next, shows the epilogue button
+            if (epilogueButton != null) epilogueButton.SetActive(true);
+        }
+
         Pause();
     }
 
@@ -150,5 +181,17 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
+    }
+
+    public void LoadPrologue()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Prologue");
+    }
+
+    public void LoadEpilogue()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Epilogue"); 
     }
 }

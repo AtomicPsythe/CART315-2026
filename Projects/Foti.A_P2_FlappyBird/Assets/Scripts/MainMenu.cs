@@ -6,6 +6,11 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
+        SceneManager.LoadScene("Prologue");
+    }
+
+    public void Level()
+    {
         SceneManager.LoadScene("StartLevel");
     }
 

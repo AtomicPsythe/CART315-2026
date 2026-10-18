@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Controls.unity
     guid: b84bab385976cac4886fd764a377c8d4
   - enabled: 1
+    path: Assets/Scenes/Prologue.unity
+    guid: c50dddb22d47809409d04554768d37eb
+  - enabled: 1
     path: Assets/Scenes/StartLevel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -20,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: afe28849b781d624a9d3f25f75c87e48
+  - enabled: 1
+    path: Assets/Scenes/Epilogue.unity
+    guid: 5f73f69879f7a6a41bbf196628cd283a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

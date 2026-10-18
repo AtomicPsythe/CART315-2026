@@ -1,19 +1,17 @@
 using System.Collections;
 using UnityEngine;
 
-public class Level3FlowerSpawner : MonoBehaviour
+public class Level3Spawner : MonoBehaviour
 {
     // array for the tulip and sunflower prefabs to be used
-    public GameObject[] flowerPrefabs; 
+    [SerializeField] private Flower[] flowerPrefabs;
 
     // spawner timing
-    public float minSpawnRate = 1.5f;
-    public float maxSpawnRate = 3f;
+    public float minSpawnRate = 0.6f;
+    public float maxSpawnRate = 1.2f;
 
-    [SerializeField] private float clearBufferTime = 1f; 
-
-    // when the spawner(s) stop spawning flowers before the leaf platform appears
-    public float stopSpawningAfterSeconds = 11f;
+    // when the spawner stops spawning flowers before the leaf platform appears
+    public float stopSpawningAfterSeconds = 10f;
 
     private Parallax parallaxReference;
     private Coroutine spawnCoroutine;
@@ -41,11 +39,7 @@ public class Level3FlowerSpawner : MonoBehaviour
     {
         if (parallaxReference != null)
         {
-            stopSpawningAfterSeconds = parallaxReference.scrollDuration - clearBufferTime;
-        }
-        else
-        {
-            stopSpawningAfterSeconds = 11f; 
+            stopSpawningAfterSeconds = 11.5f;
         }
     }
 
@@ -64,17 +58,22 @@ public class Level3FlowerSpawner : MonoBehaviour
     {
         while (isSpawnerActive)
         {
-            if (flowerPrefabs != null && flowerPrefabs.Length > 0)
+            // checks the spawner manager before doing anything
+            if (SpawnManager.Instance != null && SpawnManager.Instance.CanSpawn())
             {
-                // picks one flower at a time to spawn
-                int randomIndex = Random.Range(0, flowerPrefabs.Length);
-                GameObject selectedFlowerPrefab = flowerPrefabs[randomIndex];
+                // makes sure the prefabs are assigned in the inspector when playing the game (since they would dissapear sometimes during playtesting)
+                if (flowerPrefabs != null && flowerPrefabs.Length > 0)
+                {
+                    // chooses one of the two flowers from the array of prefabs to spawn at a time
+                    int randomIndex = Random.Range(0, flowerPrefabs.Length);
+                    Flower selectedFlowerPrefab = flowerPrefabs[randomIndex];
 
-                Instantiate(
-                    selectedFlowerPrefab,
-                    transform.position,
-                    Quaternion.identity
-                );
+                    Instantiate(
+                        selectedFlowerPrefab,
+                        transform.position,
+                        Quaternion.identity
+                    );
+                }
             }
 
             float nextSpawnTime = Random.Range(minSpawnRate, maxSpawnRate);
