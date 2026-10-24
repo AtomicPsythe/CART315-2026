@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Journal/Journal 2 Flappy Bird Project.md",
+                "file": "Journal/Journal 3 Walking Simulator.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Journal 2 Flappy Bird Project"
+              "title": "Journal 3 Walking Simulator"
             }
           }
         ],
@@ -202,6 +202,8 @@
   },
   "active": "8e596b956205fb55",
   "lastOpenFiles": [
+    "Journal/Journal 2 Flappy Bird Project.md",
+    "Journal/Journal 3 Walking Simulator.md",
     "Projects/Foti.A_P2_FlappyBird/Temp/Burst/burst-aotdsfam8ty.fdh",
     "Projects/Foti.A_P2_FlappyBird/Temp/Burst/burst-aotr3jshha5.i1v",
     "Projects/Foti.A_P2_FlappyBird/Temp/Burst/burst-aote5xmobsz.hqi",
@@ -212,7 +214,6 @@
     "Projects/Foti.A_P2_FlappyBird/Temp/Burst/burst-aot821fcp8v.wij",
     "Projects/Foti.A_P2_FlappyBird/Temp/Burst/burst-aotylk7vqgu.341",
     "Projects/Foti.A_P2_FlappyBird/Temp/Burst/burst-aotep5x4j9c.dea",
-    "Projects/Foti.A_P2_FlappyBird/Temp/Burst/burst-aotunt3w8ue.pop",
     "Projects/Foti.A_P2_FlappyBird/Temp/Burst/burst-aotk3pxlmdy.png",
     "Projects/Foti.A_P2_FlappyBird/Assets/Sprites/NectarHeartLVL3.png",
     "Projects/Foti.A_P2_FlappyBird/Assets/Sprites/NectarHeartLevel3.png",
@@ -246,7 +247,6 @@
     "Projects/Foti.A_P2_FlappyBird/Packages/com.unity.2d.animation/Documentation~/index.md",
     "Projects/Foti.A_P2_FlappyBird/Packages/com.unity.2d.animation/Documentation~/ex-skeleton-sharing.md",
     "Projects/Foti.A_P2_FlappyBird/Packages/com.unity.2d.animation/Documentation~/PreparingArtwork.md",
-    "Projects/Foti.A_P2_FlappyBird/Packages/com.unity.2d.animation/Documentation~/ex-single-skinned-sprite.md",
-    "Projects/Foti.A_P2_FlappyBird/Packages/com.unity.2d.animation/Documentation~/ex-runtime-swap.md"
+    "Projects/Foti.A_P2_FlappyBird/Packages/com.unity.2d.animation/Documentation~/ex-single-skinned-sprite.md"
   ]
 }
