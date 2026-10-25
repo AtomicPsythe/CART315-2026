@@ -22,3 +22,4 @@
 - edited the player camera to have a dark outer ring via implementing a vignette to make the flashlight stand out more
 - created a snow particle system and adjusted its values (size, shape, speed, amount, depth, emission, velocity, wind speed/intensity) until i was satisfied 
 - playing around with various skyboxes to find one that matches that cloudy night sky illuminated by the moon. considering making it using Unity's tools but still need to do research on it
+	- https://assetstore.unity.com/packages/2d/textures-materials/sky/allsky-free-10-sky-skybox-set-146014
