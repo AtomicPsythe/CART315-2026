@@ -23,3 +23,21 @@
 - created a snow particle system and adjusted its values (size, shape, speed, amount, depth, emission, velocity, wind speed/intensity) until i was satisfied 
 - playing around with various skyboxes to find one that matches that cloudy night sky illuminated by the moon. considering making it using Unity's tools but still need to do research on it
 	- https://assetstore.unity.com/packages/2d/textures-materials/sky/allsky-free-10-sky-skybox-set-146014
+- found snowy tree assets to use for the scene
+	- https://assetstore.unity.com/packages/3d/vegetation/nature-pack-low-poly-trees-bushes-210184
+
+10/26/2026
+
+- gathered all of the tree assets to use from the asset pack and added them to the paint trees tab in the terrain inspector and painted them randomly scattered across the terrain
+- gathered the following sounds from Pixabay and imported them into my project:
+	- [https://pixabay.com/sound-effects/search/blizzard/](https://pixabay.com/sound-effects/search/blizzard/ "https://pixabay.com/sound-effects/search/blizzard/")
+	- [https://pixabay.com/sound-effects/search/wind/](https://pixabay.com/sound-effects/search/wind/ "https://pixabay.com/sound-effects/search/wind/")
+	- [https://pixabay.com/sound-effects/search/trees/](https://pixabay.com/sound-effects/search/trees/ "https://pixabay.com/sound-effects/search/trees/")
+	- [https://pixabay.com/sound-effects/search/footsteps%20in%20the%20snow/](https://pixabay.com/sound-effects/search/footsteps%20in%20the%20snow/ "https://pixabay.com/sound-effects/search/footsteps%20in%20the%20snow/")
+	- [https://pixabay.com/music/search/horror%20ambience/](https://pixabay.com/music/search/horror%20ambience/ "https://pixabay.com/music/search/horror%20ambience/")
+
+10/28/2026
+
+- went back into unity and added the blizzard, wind, trees, footsteps, and ambiance sounds into the project playing at varying volume levels within the scene
+- need to adjust the footsteps sound since it continues to play despite the player remaining still and has almost a stacking effect when the player begins walking again (audio file plays again creating a stacking/replaying effect)
+- need to look to improve skybox still + figuring out how to add a trail of footsteps in the snow behind the player

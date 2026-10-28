@@ -28,7 +28,7 @@ namespace Cart315.FirstPerson
 
         private void LateUpdate()
         {
-            if (!_player.isActiveAndEnabled || !_player.IsGrounded || !_player.IsInputMoving)
+            if (!_player.isActiveAndEnabled || !_player.IsGrounded || !_player.IsInputMoving || _player.GroundDistanceThisFrame < 0.01f)
             {
                 _distance = 0;
                 return;

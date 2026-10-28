@@ -421,6 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f9adbbe87aee74d9d3446986bea313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Cart315.FirstPerson::Cart315.FirstPerson.FPFootsteps
-  _sounds: []
-  _stepDistance: 1.8
-  _volume: 0.35
+  _sounds:
+  - {fileID: 8300000, guid: 79d67fbb31a228349b7fd173effdc107, type: 3}
+  _stepDistance: 3
+  _volume: 0.4
