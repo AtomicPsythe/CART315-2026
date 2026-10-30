@@ -41,3 +41,10 @@
 - went back into unity and added the blizzard, wind, trees, footsteps, and ambiance sounds into the project playing at varying volume levels within the scene
 - need to adjust the footsteps sound since it continues to play despite the player remaining still and has almost a stacking effect when the player begins walking again (audio file plays again creating a stacking/replaying effect)
 - need to look to improve skybox still + figuring out how to add a trail of footsteps in the snow behind the player
+
+10/30/2026
+
+- added the following code to the FP Footsteps script to disable the sound if the player is not actively moving:
+	- if (_audioSource.isPlaying) { _audioSource.Stop(); }
+- fixed my skybox issue by changing the background type for the first person camera from color to skybox, allowing the skybox to be visible how i wanted it to be, thus adding that eerie nighttime ambiance i was searching for
+- also made the scope of the player flashlight a lot more intense and wider to emit overall more light and enabled shadows on it so that when it flashes light on an object it emits a soft shadow

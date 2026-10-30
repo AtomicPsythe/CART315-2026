@@ -28,9 +28,15 @@ namespace Cart315.FirstPerson
 
         private void LateUpdate()
         {
-            if (!_player.isActiveAndEnabled || !_player.IsGrounded || !_player.IsInputMoving || _player.GroundDistanceThisFrame < 0.01f)
+            if (!_player.isActiveAndEnabled || !_player.IsGrounded || !_player.IsInputMoving)
             {
                 _distance = 0;
+
+                if (_audioSource.isPlaying)
+                {
+                    _audioSource.Stop();
+                }
+                
                 return;
             }
             _distance += _player.GroundDistanceThisFrame;

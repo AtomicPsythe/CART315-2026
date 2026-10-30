@@ -148,7 +148,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -423,5 +423,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Cart315.FirstPerson::Cart315.FirstPerson.FPFootsteps
   _sounds:
   - {fileID: 8300000, guid: 79d67fbb31a228349b7fd173effdc107, type: 3}
-  _stepDistance: 3
+  _stepDistance: 2.2
   _volume: 0.4
