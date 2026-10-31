@@ -422,6 +422,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Cart315.FirstPerson::Cart315.FirstPerson.FPFootsteps
   _sounds:
-  - {fileID: 8300000, guid: 79d67fbb31a228349b7fd173effdc107, type: 3}
-  _stepDistance: 2.2
+  - {fileID: 8300000, guid: b49b919b8b046f841990ea63d3cdab2b, type: 3}
+  _stepDistance: 1.3
   _volume: 0.4
+  _footprintDecalPrefab: {fileID: 0}
+  _maxFootprints: 10
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295

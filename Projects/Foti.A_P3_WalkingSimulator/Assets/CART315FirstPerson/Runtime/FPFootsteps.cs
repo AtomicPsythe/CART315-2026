@@ -12,11 +12,20 @@ namespace Cart315.FirstPerson
         [SerializeField, Min(0.1f)] private float _stepDistance = 1.8f;
         [SerializeField, Range(0, 1)] private float _volume = 0.35f;
 
+        // Decal variables
+        [SerializeField] private GameObject _footprintDecalPrefab;
+        [SerializeField] private int _maxFootprints = 10;
+        [SerializeField] private LayerMask _groundLayer;
+
         public event Action FootstepPlayed;
         private FPController _player;
         private AudioSource _audioSource;
         private float _distance;
         private int _lastClip = -1;
+
+        // footprint variables
+        private GameObject[] _decalPool;
+        private int _currentPoolIndex = 0;
 
         private void Awake()
         {
@@ -24,6 +33,17 @@ namespace Cart315.FirstPerson
             _audioSource = GetComponent<AudioSource>();
             _audioSource.playOnAwake = false;
             _audioSource.loop = false;
+
+            // generates the footprints before loading them
+            if (_footprintDecalPrefab != null)
+            {
+                _decalPool = new GameObject[_maxFootprints];
+                for (int i = 0; i < _maxFootprints; i++)
+                {
+                    _decalPool[i] = Instantiate(_footprintDecalPrefab);
+                    _decalPool[i].SetActive(false);
+                }
+            }
         }
 
         private void LateUpdate()
@@ -57,7 +77,32 @@ namespace Cart315.FirstPerson
             if (selected < 0) return;
             _audioSource.PlayOneShot(_sounds[selected], _volume);
             _lastClip = selected;
+
+            // make the prints spawn on and off in unison with the sound
+            TrySpawnDecalFootprint();
+
             FootstepPlayed?.Invoke();
+        }
+
+        private void TrySpawnDecalFootprint()
+        {
+            if (_decalPool == null || _decalPool.Length == 0) return;
+
+            // this makes it so that the footprints lay IN the snow terrain
+            if (Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, out RaycastHit hit, 2f, _groundLayer))
+            {
+                GameObject decal = _decalPool[_currentPoolIndex];
+                decal.SetActive(true);
+                
+                // applies the decal straight onto the surface as the player makes the step
+                decal.transform.position = hit.point;
+
+                // adjusts the footprints' orientation based on the direction in which the player is moving
+                decal.transform.rotation = Quaternion.Euler(90f, transform.eulerAngles.y, 0f);
+
+                // when it reaches the maximum capacity (20) it deletes the older footprints one by one to spawn new ones
+                _currentPoolIndex = (_currentPoolIndex + 1) % _maxFootprints;
+            }
         }
 
         private void OnDisable() => _distance = 0;
