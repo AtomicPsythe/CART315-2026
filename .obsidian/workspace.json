@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Journal/Journal 3 Walking Simulator.md",
+                "file": "Reflections/Reflective Reading 3 The Anatomy of Prototypes Prototypes as Filters, Prototypes as Manifestations of Design Ideas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Journal 3 Walking Simulator"
+              "title": "Reflective Reading 3 The Anatomy of Prototypes Prototypes as Filters, Prototypes as Manifestations of Design Ideas"
             }
           }
         ],
@@ -202,6 +202,10 @@
   },
   "active": "8e596b956205fb55",
   "lastOpenFiles": [
+    "Reflections/Reflective Reading 2 Schön and Bennett Reflective Conversation With Materials.md",
+    "Reflections/Reflective Reading 3 The Anatomy of Prototypes Prototypes as Filters, Prototypes as Manifestations of Design Ideas.md",
+    "Reflections/Reflective Reading 1 The Stuff Games Are Made Of (P. Barr) Chapter 2.md",
+    "Journal/Journal 3 Walking Simulator.md",
     "Projects/Foti.A_P3_WalkingSimulator/Temp/UnityTempFile-49f0be59db067494ebdd27b1be9ec96f",
     "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_3_png_min.mat.meta",
     "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_4_png_min.mat.meta",
@@ -213,7 +217,6 @@
     "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/Materials/snow_1_png_min.mat",
     "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/snow_4_png_min.png.meta",
     "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/snow_4_png_min.png",
-    "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/snow_3_png_min.png.meta",
     "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/snow_3_png_min.png",
     "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/snow_2_png_min.png",
     "Projects/Foti.A_P3_WalkingSimulator/Assets/External Assetrs/SnowMaterial/4 Snow Materials/Textures/Optimized (x1024, PNG -45%)/snow_1_png_min.png",
@@ -244,9 +247,6 @@
     "Projects/Foti.A_P3_WalkingSimulator/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Documentation~/snippets/vs-with-graph-open-ff.md",
     "Projects/Foti.A_P3_WalkingSimulator/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Documentation~/snippets/vs-visual-scripting-window.md",
     "Projects/Foti.A_P3_WalkingSimulator/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Documentation~/snippets/vs-return-unity.md",
-    "Projects/Foti.A_P3_WalkingSimulator/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Documentation~/snippets/vs-save-script.md",
-    "Projects/Foti.A_P3_WalkingSimulator/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Documentation~/snippets/vs-regen-node-library.md",
-    "Projects/Foti.A_P3_WalkingSimulator/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Documentation~/snippets/vs-open-state-menu.md",
-    "Projects/Foti.A_P3_WalkingSimulator/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Documentation~/snippets/vs-open-project-window.md"
+    "Projects/Foti.A_P3_WalkingSimulator/Library/PackageCache/com.unity.visualscripting@4edfcc09512f/Documentation~/snippets/vs-save-script.md"
   ]
 }
