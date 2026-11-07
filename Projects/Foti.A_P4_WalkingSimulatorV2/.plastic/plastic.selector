@@ -1,0 +1,4 @@
+repository "Foti.A_P3_WalkingSimulator/Foti.A_P3_WalkingSimulator@3574259184175@cloud"
+  path "/"
+    br "/main"
+    co "/main"
