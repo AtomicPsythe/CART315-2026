@@ -1,0 +1,22 @@
+11/7/2026
+
+- duplicated the walking sim project to make v2
+- brainstormed some possible improvements and ideas
+- came up with the following:
+	- make paths in the forest with gates that open and close at will (look at what we did during class) -> like until dawn opening and closing gates
+	- add piles of snow, leaves blowing in the wind, branches on the ground and make paths of snow where people have walked
+	- make decisions appear in certain areas in the environment
+	- sound goes mute when you are in a specific area in the scene
+	- stamina bar
+	- toggleable flashlight
+- after thinking on these improvements, i decided to go with the toggleable flashlight, improving the environment look with piles of snow, leaves blowing in the wind and branches and leaves on the ground, and add an explorable cabin in the distance maybe. 
+- i first started with the toggleable flashlight, where i created a script that would slowly tick down the flashlight's battery over time when its in use and would dim when the flashlight is below 30% and would turn off when it reaches 0%. i made it toggleable using the F key so it isn't on all the time
+- i used the following click sound effect for when it turns on and off
+	- https://pixabay.com/sound-effects/technology-turning-on-and-off-a-flashlight-click-sound-502512/
+- i also added a panting noise for whenever the player is in motion to make the experience feel more real and alive
+	- https://pixabay.com/sound-effects/film-special-effects-panting-7108/
+- when making the flashlight, I thought to myself if there should be a way where the player can recharge their battery, so I decided to add floating battery collectibles around the map. the battery collectible was used via the following asset from the unity asset store
+	- https://assetstore.unity.com/packages/3d/props/simple-gems-and-items-ultimate-animated-customizable-pack-73764
+- i also added a spot light to the battery so it looks like its shining in the distance to attract the player towards it. in doing so, i also added a battery collectible script so that it can be collected and naturally recharge the flashlight's battery
+- the next improvements that i need to work on are to scatter the batteries across the map, look into potentially adding a script to make the weather feel more random, add more piles of snow and scatter leaves and sticks/branches around the map, and potentially look into adding a cabin somewhere in the terrain
+- i also need to solidify my gameplay element for the project

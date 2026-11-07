@@ -75,7 +75,7 @@ Camera:
   m_GameObject: {fileID: 937308258615747405}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.045, g: 0.065, b: 0.1, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 5856394514190234186}
   - component: {fileID: 2269117464549292467}
   - component: {fileID: 522398293480352643}
+  - component: {fileID: 8012533458940617544}
   m_Layer: 2
   m_Name: CART315 First Person
   m_TagString: Untagged
@@ -430,3 +431,21 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8012533458940617544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656500101664370645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2742ad4c8627c174192912bd12a8752c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Cart315.FirstPerson::FlashlightController
+  _flashlight: {fileID: 0}
+  _audioSource: {fileID: 0}
+  _clickSound: {fileID: 8300000, guid: a87d17b29d350f5408ecc0d07f7e0e8d, type: 3}
+  _maxBattery: 100
+  _drainRate: 1
+  _maxIntensity: 300
