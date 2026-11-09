@@ -20,3 +20,20 @@
 - i also added a spot light to the battery so it looks like its shining in the distance to attract the player towards it. in doing so, i also added a battery collectible script so that it can be collected and naturally recharge the flashlight's battery
 - the next improvements that i need to work on are to scatter the batteries across the map, look into potentially adding a script to make the weather feel more random, add more piles of snow and scatter leaves and sticks/branches around the map, and potentially look into adding a cabin somewhere in the terrain
 - i also need to solidify my gameplay element for the project
+
+11/8/2026
+
+- scattered 6 batteries across the terrain
+- duplicated the blizzard twice, made one version more erratic and chaotic and made the other version more serene and calm so that the blizzard looks and feels more realistic and less calculated and organized
+- after testing the walking simulator, I am satisfied with the way the panting is already being translated, so that is no longer an edit that needs to be done
+- have to search for piles of snow, rocks, leaves, and branches assets to add and scatter across the terrain 
+
+11/9/2026
+
+- had a potential idea for a gameplay goal for the player, where 3-4 parts of a note are scattered along the terrain and the player has to find them in order to "complete" the walking simulator. work in progress idea but can be fun to implement
+- imported the following asset pack into the project, as it contains a lot of useful environmental elements that are already covered in snow and a low poly cabin and chest that I can use for the the player to explore and find collectibles
+	- https://assetstore.unity.com/packages/3d/environments/landscapes/lowpoly-forest-pack-winter-129565
+- scattered some snowy grass, rocks, and tree stumps around the environment to make it look more real and natural. added a well in the center of the terrain and a cabin with a chest inside for the player to find and explore. 
+- will look into adding more rocks/trees/logs/tree stumps around the terrain
+- have to look into making/finding the note asset to scatter around the terrain for the player to find to reveal some kind of hidden message
+- still need to figure out how to add piles/lumps of snow on the terrain (can also be an asset that I can find)
