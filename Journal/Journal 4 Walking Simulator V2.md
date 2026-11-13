@@ -37,3 +37,11 @@
 - will look into adding more rocks/trees/logs/tree stumps around the terrain
 - have to look into making/finding the note asset to scatter around the terrain for the player to find to reveal some kind of hidden message
 - still need to figure out how to add piles/lumps of snow on the terrain (can also be an asset that I can find)
+
+11/10/2026
+
+- 
+
+11/11/2026
+
+- 

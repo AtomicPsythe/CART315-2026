@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 580d7e954bbff174794836248c2cc077, type: 2}
     - target: {fileID: 919132149155446097, guid: 9766cb41d1c5a5b42bf9fff17eccaa7e, type: 3}
       propertyPath: m_Name
-      value: Battery 1
+      value: Battery
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -149,3 +149,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Cart315.FirstPerson::BatteryPickup
   _rechargeAmount: 40
+  _pickupSound: {fileID: 8300000, guid: a997d031ae9bc464ab6382dc21c0b112, type: 3}
+  _pickupVolume: 0.6

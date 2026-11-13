@@ -7,6 +7,10 @@ namespace Cart315.FirstPerson
         // how much a single battery recharges
         [SerializeField] private float _rechargeAmount = 40f;
 
+        // battery audio on interaction
+        [SerializeField] private AudioClip _pickupSound;
+        [SerializeField] private float _pickupVolume = 0.6f;
+
         private void Update()
         {
             
@@ -19,6 +23,12 @@ namespace Cart315.FirstPerson
             if (flashlight != null)
             {
                 flashlight.AddBattery(_rechargeAmount);
+
+                if (_pickupSound != null)
+                {
+                    AudioSource.PlayClipAtPoint(_pickupSound, transform.position, _pickupVolume);
+                }
+
                 Destroy(gameObject);
             }
         }

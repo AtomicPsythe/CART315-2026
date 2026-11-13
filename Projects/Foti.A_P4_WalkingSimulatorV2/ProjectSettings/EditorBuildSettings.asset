@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/WalkingSim.unity
+    guid: 9b741d65a12ba7c43a12eed3dafee517
+  - enabled: 1
+    path: Assets/Scenes/GameEnd.unity
+    guid: f5e06547782f15845b59e6c66259bf87
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

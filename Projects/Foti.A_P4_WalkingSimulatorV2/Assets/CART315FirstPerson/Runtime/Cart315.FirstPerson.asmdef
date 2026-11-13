@@ -1,5 +1,17 @@
 {
-  "name": "Cart315.FirstPerson",
-  "rootNamespace": "Cart315.FirstPerson",
-  "references": ["Unity.InputSystem"]
+    "name": "Cart315.FirstPerson",
+    "rootNamespace": "Cart315.FirstPerson",
+    "references": [
+        "Unity.InputSystem",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
